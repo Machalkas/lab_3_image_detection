@@ -1,86 +1,61 @@
-from torchvision.models import detection
+from pyimagesearch import config
+from torchvision import models
 import numpy as np
 import argparse
-import pickle
 import torch
 import cv2
-from torch import cuda
+from torch import nn
+import time
+import os
+
+def preprocess_image(image):
+	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+	image = cv2.resize(image, (config.IMAGE_SIZE, config.IMAGE_SIZE))
+	image = image.astype("float32") / 255.0
+	image -= config.MEAN
+	image /= config.STD
+	image = np.transpose(image, (2, 0, 1))
+	image = np.expand_dims(image, 0)
+	return image
 
 
-# construct the argument parser and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-i", "--image", type=str, required=True,
-	help="path to the input image")
-ap.add_argument("-m", "--model", type=str, default="frcnn-resnet",
-	choices=["frcnn-resnet", "frcnn-mobilenet", "retinanet"],
-	help="name of the object detection model")
-ap.add_argument("-l", "--labels", type=str, default="coco_classes.pickle",
-	help="path to file containing list of categories in COCO dataset")
-ap.add_argument("-c", "--confidence", type=float, default=0.5,
-	help="minimum probability to filter weak detections")
-args = vars(ap.parse_args())
+images_names = os.listdir("images")
 
-# set the device we will be using to run the model
-DEVICE = torch.device("cuda" if cuda.is_available() else "cpu")
-# load the list of categories in the COCO dataset and then generate a
-# set of bounding box colors for each class
-# CLASSES = pickle.loads(open(args["labels"], "rb").read())
-CLASSES = [i for i in range(10)]
-COLORS = np.random.uniform(0, 255, size=(len(CLASSES), 3))
-
-# initialize a dictionary containing model name and its corresponding 
-# torchvision function call
 MODELS = {
-	"frcnn-resnet": detection.fasterrcnn_resnet50_fpn,
-	"frcnn-mobilenet": detection.fasterrcnn_mobilenet_v3_large_320_fpn,
-	"retinanet": detection.retinanet_resnet50_fpn
+	"vgg16": models.vgg16(pretrained=True),
+	"vgg19": models.vgg19(pretrained=True),
+	"inception": models.inception_v3(pretrained=True),
+	"densenet": models.densenet121(pretrained=True),
+	"resnet": models.resnet50(pretrained=True)
 }
-detection.fasterrcnn_mobilenet_v3_large_320_fpn()
-# load the model and set it to evaluation mode
-model = MODELS[args["model"]](pretrained=True, progress=True,
-	num_classes=len(CLASSES), pretrained_backbone=True).to(DEVICE)
+
+models_keys = list(MODELS.keys())
+
+print("[INFO] loading {}...".format(models_keys[0]))
+model = MODELS[models_keys[0]].to(config.DEVICE)
 model.eval()
 
-# load the image from disk
-image = cv2.imread(args["image"])
+print("[INFO] loading image:", images_names[0])
+image = cv2.imread(images_names[0])
 orig = image.copy()
-# convert the image from BGR to RGB channel ordering and change the
-# image from channels last to channels first ordering
-image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-image = image.transpose((2, 0, 1))
-# add the batch dimension, scale the raw pixel intensities to the
-# range [0, 1], and convert the image to a floating point tensor
-image = np.expand_dims(image, axis=0)
-image = image / 255.0
-image = torch.FloatTensor(image)
-# send the input to the device and pass the it through the network to
-# get the detections and predictions
-image = image.to(DEVICE)
-detections = model(image)[0]
+image = preprocess_image(image)
+image = torch.from_numpy(image)
+image = image.to(config.DEVICE)
+print("[INFO] loading ImageNet labels...")
+imagenetLabels = dict(enumerate(open(config.IN_LABELS)))
 
-# loop over the detections
-for i in range(0, len(detections["boxes"])):
-	# extract the confidence (i.e., probability) associated with the
-	# prediction
-	confidence = detections["scores"][i]
-	# filter out weak detections by ensuring the confidence is
-	# greater than the minimum confidence
-	if confidence > args["confidence"]:
-		# extract the index of the class label from the detections,
-		# then compute the (x, y)-coordinates of the bounding box
-		# for the object
-		idx = int(detections["labels"][i])
-		box = detections["boxes"][i].detach().cpu().numpy()
-		(startX, startY, endX, endY) = box.astype("int")
-		# display the prediction to our terminal
-		label = "{}: {:.2f}%".format(CLASSES[idx], confidence * 100)
-		print("[INFO] {}".format(label))
-		# draw the bounding box and label on the image
-		cv2.rectangle(orig, (startX, startY), (endX, endY),
-			COLORS[idx], 2)
-		y = startY - 15 if startY - 15 > 15 else startY + 15
-		cv2.putText(orig, label, (startX, y),
-			cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLORS[idx], 2)
-# show the output image
-cv2.imshow("Output", orig)
+print("[INFO] classifying image with '{}'...".format(models_keys[0]))
+logits = model(image)
+probabilities = nn.Softmax(dim=-1)(logits)
+sortedProba = torch.argsort(probabilities, dim=-1, descending=True)
+for (i, idx) in enumerate(sortedProba[0, :5]):
+	print("{}. {}: {:.2f}%".format
+		(i, imagenetLabels[int(idx.item())].strip(),
+		probabilities[0, idx.item()] * 100))
+
+(label, prob) = (imagenetLabels[probabilities.argmax().item()],
+	probabilities.max().item())
+cv2.putText(orig, "Label: {}, {:.2f}%".format(label.strip(), prob * 100),
+	(10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
+cv2.imshow("Classification", orig)
 cv2.waitKey(0)
