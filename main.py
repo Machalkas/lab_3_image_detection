@@ -1,14 +1,16 @@
 from datetime import datetime
-from pyimagesearch import config
+import config
 from torchvision import models
 import numpy as np
-import argparse
 import torch
 import cv2
 from torch import nn
 import time
 import os
 import random
+
+if not os.path.isdir("reports"):
+	os.makedirs("reports")
 
 print_depth = 0
 report_file_name = f"reports/image_recognition_report_{datetime.now()}.txt"
