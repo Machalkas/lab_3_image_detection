@@ -1,0 +1,413 @@
+ images sample: ['Bike (21).png', 'Car (11).jpeg', 'Bike (13).jpeg', 'Car (4).jpg', 'Bike (17).jpg', 'Car (18).jpg', 'Bike (6).png', 'Bike (18).jpg', 'Car (31).jpg', 'Car (13).jpg']
+ Using device cuda
+ loading ImageNet labels...
+	 loading vgg16...
+		 loading image: Bike (21).png
+		 classifying image with 'vgg16'...
+		 Time passed 61.84089541435242. Image Bike (21).png result
+			 0. motor_scooter, scooter: 31.42380142211914
+			 1. moped: 18.402463912963867
+			 2. disk_brake, disc_brake: 16.82286834716797
+			 3. crash_helmet: 9.506815910339355
+			 4. parachute, chute: 5.258370399475098
+		 loading image: Car (11).jpeg
+		 classifying image with 'vgg16'...
+		 Time passed 4.6319921016693115. Image Car (11).jpeg result
+			 0. sports_car, sport_car: 24.97412872314453
+			 1. convertible: 21.401878356933594
+			 2. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 19.94562530517578
+			 3. car_wheel: 11.149018287658691
+			 4. pickup, pickup_truck: 6.559064865112305
+		 loading image: Bike (13).jpeg
+		 classifying image with 'vgg16'...
+		 Time passed 5.236169815063477. Image Bike (13).jpeg result
+			 0. motor_scooter, scooter: 36.376068115234375
+			 1. moped: 34.390445709228516
+			 2. crash_helmet: 5.4742326736450195
+			 3. disk_brake, disc_brake: 4.007613182067871
+			 4. backpack, back_pack, knapsack, packsack, rucksack, haversack: 2.8229331970214844
+		 loading image: Car (4).jpg
+		 classifying image with 'vgg16'...
+		 Time passed 3.681205987930298. Image Car (4).jpg result
+			 0. minivan: 53.8281135559082
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 12.912723541259766
+			 2. car_wheel: 11.57742977142334
+			 3. police_van, police_wagon, paddy_wagon, patrol_wagon, wagon, black_Maria: 8.195366859436035
+			 4. cab, hack, taxi, taxicab: 3.818169593811035
+		 loading image: Bike (17).jpg
+		 classifying image with 'vgg16'...
+		 Time passed 0.07292652130126953. Image Bike (17).jpg result
+			 0. motor_scooter, scooter: 72.8125
+			 1. moped: 24.08040428161621
+			 2. disk_brake, disc_brake: 2.66143798828125
+			 3. crash_helmet: 0.319416880607605
+			 4. car_wheel: 0.03158043697476387
+		 loading image: Car (18).jpg
+		 classifying image with 'vgg16'...
+		 Time passed 0.07619905471801758. Image Car (18).jpg result
+			 0. minivan: 58.0893440246582
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 23.33944320678711
+			 2. jeep, landrover: 10.206062316894531
+			 3. car_wheel: 5.420409679412842
+			 4. minibus: 1.2610925436019897
+		 loading image: Bike (6).png
+		 classifying image with 'vgg16'...
+		 Time passed 0.06586480140686035. Image Bike (6).png result
+			 0. moped: 30.322900772094727
+			 1. disk_brake, disc_brake: 30.269506454467773
+			 2. motor_scooter, scooter: 26.12534523010254
+			 3. car_wheel: 3.5071492195129395
+			 4. crash_helmet: 2.7831950187683105
+		 loading image: Bike (18).jpg
+		 classifying image with 'vgg16'...
+		 Time passed 0.3956339359283447. Image Bike (18).jpg result
+			 0. motor_scooter, scooter: 69.75163269042969
+			 1. moped: 21.439565658569336
+			 2. disk_brake, disc_brake: 6.556856632232666
+			 3. crash_helmet: 1.8288969993591309
+			 4. neck_brace: 0.16966010630130768
+		 loading image: Car (31).jpg
+		 classifying image with 'vgg16'...
+		 Time passed 0.08359837532043457. Image Car (31).jpg result
+			 0. minivan: 83.02908325195312
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 14.339934349060059
+			 2. jeep, landrover: 1.7578661441802979
+			 3. car_wheel: 0.6522691249847412
+			 4. minibus: 0.09515894204378128
+		 loading image: Car (13).jpg
+		 classifying image with 'vgg16'...
+		 Time passed 0.11350846290588379. Image Car (13).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 55.88859939575195
+			 1. minivan: 23.354738235473633
+			 2. car_wheel: 8.271705627441406
+			 3. grille, radiator_grille: 4.928218364715576
+			 4. jeep, landrover: 3.3765621185302734
+	 total_time: 76.19799447059631. avg: 7.6197994470596315
+	 loading vgg19...
+		 loading image: Bike (21).png
+		 classifying image with 'vgg19'...
+		 Time passed 2.5640225410461426. Image Bike (21).png result
+			 0. motor_scooter, scooter: 63.8204460144043
+			 1. moped: 28.6679744720459
+			 2. disk_brake, disc_brake: 1.6362981796264648
+			 3. crash_helmet: 1.5774365663528442
+			 4. snowmobile: 0.5542930960655212
+		 loading image: Car (11).jpeg
+		 classifying image with 'vgg19'...
+		 Time passed 0.058628082275390625. Image Car (11).jpeg result
+			 0. pickup, pickup_truck: 33.196407318115234
+			 1. convertible: 26.569259643554688
+			 2. sports_car, sport_car: 18.20981216430664
+			 3. limousine, limo: 6.300102710723877
+			 4. car_wheel: 5.6477251052856445
+		 loading image: Bike (13).jpeg
+		 classifying image with 'vgg19'...
+		 Time passed 0.06886076927185059. Image Bike (13).jpeg result
+			 0. motor_scooter, scooter: 67.94969177246094
+			 1. moped: 26.68956184387207
+			 2. crash_helmet: 0.6612480282783508
+			 3. disk_brake, disc_brake: 0.6454523801803589
+			 4. tricycle, trike, velocipede: 0.6365998387336731
+		 loading image: Car (4).jpg
+		 classifying image with 'vgg19'...
+		 Time passed 0.0592496395111084. Image Car (4).jpg result
+			 0. minivan: 64.72090148925781
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 13.346772193908691
+			 2. car_wheel: 5.993430137634277
+			 3. grille, radiator_grille: 4.521749496459961
+			 4. cab, hack, taxi, taxicab: 2.3814520835876465
+		 loading image: Bike (17).jpg
+		 classifying image with 'vgg19'...
+		 Time passed 0.047295570373535156. Image Bike (17).jpg result
+			 0. moped: 58.93634033203125
+			 1. motor_scooter, scooter: 32.595821380615234
+			 2. disk_brake, disc_brake: 7.767123699188232
+			 3. crash_helmet: 0.6618135571479797
+			 4. tricycle, trike, velocipede: 0.009258528240025043
+		 loading image: Car (18).jpg
+		 classifying image with 'vgg19'...
+		 Time passed 0.19701552391052246. Image Car (18).jpg result
+			 0. jeep, landrover: 52.98593521118164
+			 1. minivan: 30.078824996948242
+			 2. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 9.189484596252441
+			 3. car_wheel: 4.01145076751709
+			 4. grille, radiator_grille: 1.6096833944320679
+		 loading image: Bike (6).png
+		 classifying image with 'vgg19'...
+		 Time passed 0.06471776962280273. Image Bike (6).png result
+			 0. moped: 49.21196746826172
+			 1. motor_scooter, scooter: 22.546184539794922
+			 2. disk_brake, disc_brake: 18.833568572998047
+			 3. crash_helmet: 4.216624736785889
+			 4. car_wheel: 1.422871470451355
+		 loading image: Bike (18).jpg
+		 classifying image with 'vgg19'...
+		 Time passed 0.05412912368774414. Image Bike (18).jpg result
+			 0. motor_scooter, scooter: 74.79835510253906
+			 1. crash_helmet: 7.496713161468506
+			 2. moped: 7.376040458679199
+			 3. disk_brake, disc_brake: 5.566251754760742
+			 4. neck_brace: 1.2335243225097656
+		 loading image: Car (31).jpg
+		 classifying image with 'vgg19'...
+		 Time passed 0.08949613571166992. Image Car (31).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 45.41358184814453
+			 1. minivan: 43.39664077758789
+			 2. jeep, landrover: 8.233919143676758
+			 3. car_wheel: 2.5916614532470703
+			 4. grille, radiator_grille: 0.21112367510795593
+		 loading image: Car (13).jpg
+		 classifying image with 'vgg19'...
+		 Time passed 0.0817270278930664. Image Car (13).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 40.10176467895508
+			 1. car_wheel: 19.68896484375
+			 2. grille, radiator_grille: 17.544361114501953
+			 3. sports_car, sport_car: 10.681934356689453
+			 4. convertible: 5.941174030303955
+	 total_time: 3.285142183303833. avg: 0.3285142183303833
+	 loading inception...
+		 loading image: Bike (21).png
+		 classifying image with 'inception'...
+		 Time passed 8.472664833068848. Image Bike (21).png result
+			 0. crash_helmet: 56.35065460205078
+			 1. moped: 22.290273666381836
+			 2. motor_scooter, scooter: 20.945484161376953
+			 3. disk_brake, disc_brake: 0.2631063461303711
+			 4. backpack, back_pack, knapsack, packsack, rucksack, haversack: 0.08860717713832855
+		 loading image: Car (11).jpeg
+		 classifying image with 'inception'...
+		 Time passed 3.1247899532318115. Image Car (11).jpeg result
+			 0. grille, radiator_grille: 59.60429763793945
+			 1. pickup, pickup_truck: 14.588119506835938
+			 2. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 12.698841094970703
+			 3. cab, hack, taxi, taxicab: 5.187014579772949
+			 4. limousine, limo: 4.664840221405029
+		 loading image: Bike (13).jpeg
+		 classifying image with 'inception'...
+		 Time passed 1.458540678024292. Image Bike (13).jpeg result
+			 0. moped: 96.68303680419922
+			 1. motor_scooter, scooter: 2.1769602298736572
+			 2. crash_helmet: 0.7469154596328735
+			 3. backpack, back_pack, knapsack, packsack, rucksack, haversack: 0.2938326895236969
+			 4. disk_brake, disc_brake: 0.08062711358070374
+		 loading image: Car (4).jpg
+		 classifying image with 'inception'...
+		 Time passed 0.25737690925598145. Image Car (4).jpg result
+			 0. minivan: 99.76753234863281
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 0.21154743432998657
+			 2. car_wheel: 0.013330561108887196
+			 3. tow_truck, tow_car, wrecker: 0.00048241266631521285
+			 4. pickup, pickup_truck: 0.0003961026668548584
+		 loading image: Bike (17).jpg
+		 classifying image with 'inception'...
+		 Time passed 0.22495508193969727. Image Bike (17).jpg result
+			 0. motor_scooter, scooter: 97.8410415649414
+			 1. moped: 2.1010475158691406
+			 2. crash_helmet: 0.04490157961845398
+			 3. disk_brake, disc_brake: 0.010641682893037796
+			 4. tricycle, trike, velocipede: 0.0004157737421337515
+		 loading image: Car (18).jpg
+		 classifying image with 'inception'...
+		 Time passed 0.2839846611022949. Image Car (18).jpg result
+			 0. minivan: 99.93583679199219
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 0.04239342734217644
+			 2. car_wheel: 0.008186823688447475
+			 3. jeep, landrover: 0.007565698586404324
+			 4. grille, radiator_grille: 0.0016160218510776758
+		 loading image: Bike (6).png
+		 classifying image with 'inception'...
+		 Time passed 0.2518959045410156. Image Bike (6).png result
+			 0. moped: 99.11576080322266
+			 1. motor_scooter, scooter: 0.7360622882843018
+			 2. disk_brake, disc_brake: 0.09408415108919144
+			 3. crash_helmet: 0.02079181559383869
+			 4. backpack, back_pack, knapsack, packsack, rucksack, haversack: 0.013451309874653816
+		 loading image: Bike (18).jpg
+		 classifying image with 'inception'...
+		 Time passed 0.2197108268737793. Image Bike (18).jpg result
+			 0. moped: 72.73229217529297
+			 1. motor_scooter, scooter: 15.122071266174316
+			 2. disk_brake, disc_brake: 6.675617218017578
+			 3. crash_helmet: 5.208151817321777
+			 4. backpack, back_pack, knapsack, packsack, rucksack, haversack: 0.032097261399030685
+		 loading image: Car (31).jpg
+		 classifying image with 'inception'...
+		 Time passed 0.2635385990142822. Image Car (31).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 99.95968627929688
+			 1. minivan: 0.031307440251111984
+			 2. jeep, landrover: 0.005632069427520037
+			 3. car_wheel: 0.001378890359774232
+			 4. cab, hack, taxi, taxicab: 0.000718596507795155
+		 loading image: Car (13).jpg
+		 classifying image with 'inception'...
+		 Time passed 0.2838125228881836. Image Car (13).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 99.74813079833984
+			 1. minivan: 0.1161695197224617
+			 2. car_wheel: 0.10245180130004883
+			 3. sports_car, sport_car: 0.012061812914907932
+			 4. jeep, landrover: 0.003880487522110343
+	 total_time: 14.841269969940186. avg: 1.4841269969940185
+	 loading densenet...
+		 loading image: Bike (21).png
+		 classifying image with 'densenet'...
+		 Time passed 3.3730711936950684. Image Bike (21).png result
+			 0. crash_helmet: 32.23950958251953
+			 1. motor_scooter, scooter: 26.766645431518555
+			 2. moped: 24.459392547607422
+			 3. disk_brake, disc_brake: 4.114249229431152
+			 4. car_wheel: 0.9780282378196716
+		 loading image: Car (11).jpeg
+		 classifying image with 'densenet'...
+		 Time passed 0.36128926277160645. Image Car (11).jpeg result
+			 0. pickup, pickup_truck: 24.007793426513672
+			 1. car_wheel: 23.671903610229492
+			 2. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 17.225191116333008
+			 3. sports_car, sport_car: 7.692620754241943
+			 4. grille, radiator_grille: 6.407535076141357
+		 loading image: Bike (13).jpeg
+		 classifying image with 'densenet'...
+		 Time passed 0.2817728519439697. Image Bike (13).jpeg result
+			 0. moped: 45.4002799987793
+			 1. motor_scooter, scooter: 27.817237854003906
+			 2. crash_helmet: 17.092912673950195
+			 3. disk_brake, disc_brake: 5.373683452606201
+			 4. mountain_bike, all-terrain_bike, off-roader: 0.5388606786727905
+		 loading image: Car (4).jpg
+		 classifying image with 'densenet'...
+		 Time passed 0.24779820442199707. Image Car (4).jpg result
+			 0. minivan: 73.10232543945312
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 13.121670722961426
+			 2. car_wheel: 4.216665267944336
+			 3. jeep, landrover: 3.3548970222473145
+			 4. grille, radiator_grille: 1.9147939682006836
+		 loading image: Bike (17).jpg
+		 classifying image with 'densenet'...
+		 Time passed 0.22252988815307617. Image Bike (17).jpg result
+			 0. motor_scooter, scooter: 59.57871627807617
+			 1. moped: 16.169981002807617
+			 2. crash_helmet: 10.676701545715332
+			 3. disk_brake, disc_brake: 10.021102905273438
+			 4. mountain_bike, all-terrain_bike, off-roader: 1.8719019889831543
+		 loading image: Car (18).jpg
+		 classifying image with 'densenet'...
+		 Time passed 0.24729323387145996. Image Car (18).jpg result
+			 0. minivan: 85.03596496582031
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 11.503811836242676
+			 2. car_wheel: 1.31745445728302
+			 3. minibus: 0.5437673330307007
+			 4. jeep, landrover: 0.5204591751098633
+		 loading image: Bike (6).png
+		 classifying image with 'densenet'...
+		 Time passed 0.2737729549407959. Image Bike (6).png result
+			 0. moped: 52.933162689208984
+			 1. motor_scooter, scooter: 36.75300598144531
+			 2. crash_helmet: 6.900333404541016
+			 3. disk_brake, disc_brake: 2.2244412899017334
+			 4. neck_brace: 0.15045401453971863
+		 loading image: Bike (18).jpg
+		 classifying image with 'densenet'...
+		 Time passed 0.2373671531677246. Image Bike (18).jpg result
+			 0. crash_helmet: 49.09659194946289
+			 1. disk_brake, disc_brake: 22.536893844604492
+			 2. motor_scooter, scooter: 15.40260124206543
+			 3. moped: 3.7586894035339355
+			 4. sports_car, sport_car: 2.630582332611084
+		 loading image: Car (31).jpg
+		 classifying image with 'densenet'...
+		 Time passed 0.25963902473449707. Image Car (31).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 57.473915100097656
+			 1. minivan: 33.769290924072266
+			 2. jeep, landrover: 5.9897637367248535
+			 3. car_wheel: 1.386040210723877
+			 4. pickup, pickup_truck: 0.4545116722583771
+		 loading image: Car (13).jpg
+		 classifying image with 'densenet'...
+		 Time passed 0.21747970581054688. Image Car (13).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 49.639305114746094
+			 1. car_wheel: 30.239004135131836
+			 2. minivan: 12.453004837036133
+			 3. sports_car, sport_car: 2.662996292114258
+			 4. grille, radiator_grille: 2.439785957336426
+	 total_time: 5.722013473510742. avg: 0.5722013473510742
+	 loading resnet...
+		 loading image: Bike (21).png
+		 classifying image with 'resnet'...
+		 Time passed 14.042469501495361. Image Bike (21).png result
+			 0. moped: 23.56205940246582
+			 1. motor_scooter, scooter: 18.19280242919922
+			 2. crash_helmet: 17.753631591796875
+			 3. comic_book: 6.991128444671631
+			 4. disk_brake, disc_brake: 3.7041678428649902
+		 loading image: Car (11).jpeg
+		 classifying image with 'resnet'...
+		 Time passed 13.754875421524048. Image Car (11).jpeg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 42.29121398925781
+			 1. sports_car, sport_car: 12.548446655273438
+			 2. grille, radiator_grille: 11.74325180053711
+			 3. car_wheel: 7.741829872131348
+			 4. convertible: 5.77421236038208
+		 loading image: Bike (13).jpeg
+		 classifying image with 'resnet'...
+		 Time passed 0.7577688694000244. Image Bike (13).jpeg result
+			 0. moped: 72.242431640625
+			 1. motor_scooter, scooter: 24.261245727539062
+			 2. disk_brake, disc_brake: 1.8259711265563965
+			 3. crash_helmet: 0.780513346195221
+			 4. mountain_bike, all-terrain_bike, off-roader: 0.10021606087684631
+		 loading image: Car (4).jpg
+		 classifying image with 'resnet'...
+		 Time passed 0.8498470783233643. Image Car (4).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 41.91197204589844
+			 1. minivan: 22.280879974365234
+			 2. car_wheel: 16.40972328186035
+			 3. grille, radiator_grille: 7.803465366363525
+			 4. cab, hack, taxi, taxicab: 4.325726509094238
+		 loading image: Bike (17).jpg
+		 classifying image with 'resnet'...
+		 Time passed 0.5818021297454834. Image Bike (17).jpg result
+			 0. motor_scooter, scooter: 52.68439483642578
+			 1. crash_helmet: 29.754764556884766
+			 2. moped: 16.067604064941406
+			 3. disk_brake, disc_brake: 0.8252735137939453
+			 4. car_wheel: 0.18417082726955414
+		 loading image: Car (18).jpg
+		 classifying image with 'resnet'...
+		 Time passed 2.7933666706085205. Image Car (18).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 64.18122100830078
+			 1. minivan: 26.928112030029297
+			 2. jeep, landrover: 3.442744255065918
+			 3. car_wheel: 2.6822731494903564
+			 4. grille, radiator_grille: 1.645901083946228
+		 loading image: Bike (6).png
+		 classifying image with 'resnet'...
+		 Time passed 0.24709630012512207. Image Bike (6).png result
+			 0. moped: 74.17042541503906
+			 1. motor_scooter, scooter: 15.389992713928223
+			 2. crash_helmet: 6.10590934753418
+			 3. disk_brake, disc_brake: 3.4871344566345215
+			 4. car_wheel: 0.12173324078321457
+		 loading image: Bike (18).jpg
+		 classifying image with 'resnet'...
+		 Time passed 0.21559977531433105. Image Bike (18).jpg result
+			 0. motor_scooter, scooter: 47.932373046875
+			 1. moped: 27.34343719482422
+			 2. crash_helmet: 14.865928649902344
+			 3. disk_brake, disc_brake: 8.774604797363281
+			 4. mountain_bike, all-terrain_bike, off-roader: 0.32582059502601624
+		 loading image: Car (31).jpg
+		 classifying image with 'resnet'...
+		 Time passed 8.327462196350098. Image Car (31).jpg result
+			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 78.21163177490234
+			 1. minivan: 13.148702621459961
+			 2. jeep, landrover: 3.741673469543457
+			 3. car_wheel: 2.856590509414673
+			 4. grille, radiator_grille: 0.8719132542610168
+		 loading image: Car (13).jpg
+		 classifying image with 'resnet'...
+		 Time passed 1.3469090461730957. Image Car (13).jpg result
+			 0. car_wheel: 34.19998550415039
+			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 24.384029388427734
+			 2. sports_car, sport_car: 13.492633819580078
+			 3. grille, radiator_grille: 9.650238990783691
+			 4. minivan: 9.467981338500977
+	 total_time: 42.91719698905945. avg: 4.291719698905945
