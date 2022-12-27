@@ -47,27 +47,32 @@ def preprocess_image(image):
 	image = np.expand_dims(image, 0)
 	return image
 
-def classify_image(model, current_image: str, is_tr_model: bool = False)-> Tuple[Optional[Tensor], Optional[Any], Optional[Any]]:
+def classify_image(model, current_image: str, is_tr_model: bool = False)-> Tuple[Optional[Tensor], Optional[Tensor], Optional[Any], Optional[float]]:
 	logger(f"loading image:", current_image)
 	image = cv2.imread(f"images/{current_image}")
 	if image is None:
 		logger(f"Image {current_image} not found!")
-		return None, None, None
+		return None, None, None, None
 	orig = image.copy()
 	image = preprocess_image(image)
 	image = torch.from_numpy(image)
 	image = image.to(config.DEVICE)
 	if is_tr_model:
 		logger(f"Optimyze model {current_model}...")
-		model_trt = torch2trt(model, image, use_onnx=True)
+		model_trt = torch2trt(model, [image], use_onnx=True)
+		logger(f"Optimization complete")
+		start_time = time.time()
 		logits = model_trt(image)
-		logger(f"classifying image with trt '{current_model}'...")
+		end_time = time.time()
+		logger(f"Classifying image with trt '{current_model}'...")
 	else:
-		logger(f"classifying image with '{current_model}'...")
+		logger(f"Classifying image with '{current_model}'...")
+		start_time = time.time()
 		logits = model(image)
+		end_time = time.time()
 	probabilities = nn.Softmax(dim=-1)(logits)
 	sortedProba = torch.argsort(probabilities, dim=-1, descending=True)
-	return sortedProba, probabilities, orig
+	return sortedProba, probabilities, orig, end_time-start_time
 
 images_names = os.listdir("images")
 
@@ -76,7 +81,8 @@ MODELS = {
 	"vgg19": models.vgg19(pretrained=True),
 	"inception": models.inception_v3(pretrained=True),
 	"densenet": models.densenet121(pretrained=True),
-	"resnet": models.resnet50(pretrained=True)
+	"resnet": models.resnet50(pretrained=True),
+	"mobilenet": models.mobilenet_v3_small(pretrained=True)
 }
 
 models_keys = list(MODELS.keys())
@@ -87,7 +93,7 @@ logger(f"Using device {config.DEVICE}")
 logger(f"loading ImageNet labels...")
 imagenetLabels = dict(enumerate(open(config.IN_LABELS)))
 print_depth +=1
-for current_model in [models_keys[1]]:
+for current_model in models_keys:
 	logger(f"loading model {current_model}...")
 	os.makedirs(f"prediction_images/{start_datetime_string}/{current_model}")
 	model = MODELS[current_model].to(config.DEVICE)
@@ -95,34 +101,39 @@ for current_model in [models_keys[1]]:
 	print_depth +=1
 	counter = 0
 	total_time = 0
+	total_optimize_time = 0
 	for current_image in images_names_sample:
 		counter+=1
 		for is_tr_model in [False, True]:  # if True, then use torch2trt
 			if is_tr_model:
 				pass
 			start_time = time.time()
-			sortedProba, probabilities, orig = classify_image(model, current_image, is_tr_model)
+			sortedProba, probabilities, orig, time_pass = classify_image(model, current_image, is_tr_model)
 			if sortedProba is None:
 				continue
 			end_time = time.time()
-			total_time += end_time-start_time
-			logger(f"Time passed {end_time-start_time}. Image {current_image} result")
+			if is_tr_model:
+				total_optimize_time += time_pass
+			else:
+				total_time += time_pass
+			logger(f"Time passed {time_pass}. Image {current_image} result")
 			print_depth +=1
 			for (i, idx) in enumerate(sortedProba[0, :5]):
 				logger(f"{i}. {imagenetLabels[int(idx.item())].strip()}: {probabilities[0, idx.item()] * 100}")
 			print_depth -=1
 			(label, prob) = (imagenetLabels[probabilities.argmax().item()],
-					probabilities.max().item())
-			cv2.putText(orig, f"Label: {label.strip()}, {prob * 100}% Time :{end_time-start_time} sec",
+                            probabilities.max().item())
+			cv2.putText(orig, f"Label: {label.strip()}, {prob * 100}% Time :{time_pass} sec",
 						(10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
 			cv2.imwrite(f"prediction_images/{start_datetime_string}/{current_model}/prediction_{current_image}.jpg", orig)
 		# cv2.imshow("Classification", orig)
 		# cv2.waitKey(0)
 	print_depth -= 1
-	logger(f"total_time: {total_time}. avg: {total_time/counter}")
-	avg_time_by_model[current_model] = total_time/counter
+	logger(f"total_time: {total_time}. avg: {total_time/counter}. avg optimize: {total_optimize_time/counter}")
+	avg_time_by_model[current_model] = {"avg": total_time/counter, "avg_optimize": total_optimize_time/counter}
 print_depth -=1
 
+avg_time_by_model = dict(sorted(avg_time_by_model.items(), key=lambda item: item[1]["avg"] if item[1]["avg"]<item[1]["avg_optimize"] else item[1]["avg_optimize"]))
 logger("-----------------\nRESUME")
 print_depth+=1
 logger("model: avg")

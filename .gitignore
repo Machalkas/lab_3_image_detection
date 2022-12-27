@@ -1,5 +1,5 @@
 env
 .vscode
 __pycache__
-# reports
-# prediction_images
+reports
+prediction_images
