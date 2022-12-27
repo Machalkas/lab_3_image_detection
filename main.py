@@ -14,9 +14,9 @@ start_datetime_string = datetime.strftime(datetime.now(), '%d.%m.%Y %H-%M-%S')
 
 if not os.path.isdir("reports"):
 	os.makedirs("reports")
-if not os.path.isdir("prediction_image"):
-	os.makedirs("prediction_image")
-os.makedirs(f"prediction_image/{start_datetime_string}")
+if not os.path.isdir("prediction_images"):
+	os.makedirs("prediction_images")
+os.makedirs(f"prediction_images/{start_datetime_string}")
 
 print_depth = 0
 report_file_name = f"reports/image_recognition_report_{start_datetime_string}.txt"
@@ -65,7 +65,7 @@ imagenetLabels = dict(enumerate(open(config.IN_LABELS)))
 print_depth +=1
 for current_model in models_keys:
 	logger(f"loading {current_model}...")
-	os.makedirs(f"prediction_image/{start_datetime_string}/{current_model}")
+	os.makedirs(f"prediction_images/{start_datetime_string}/{current_model}")
 	model = MODELS[current_model].to(config.DEVICE)
 	model.eval()
 	print_depth +=1
@@ -96,11 +96,11 @@ for current_model in models_keys:
 			logger(f"{i}. {imagenetLabels[int(idx.item())].strip()}: {probabilities[0, idx.item()] * 100}")
 		print_depth -=1
 		(label, prob) = (imagenetLabels[probabilities.argmax().item()],
-			probabilities.max().item())
-		cv2.putText(orig, f"Label: {label.strip()}, {prob * 100}%, time :{end_time-start_time} sec",
-			(10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 2)
-		cv2.imshow("Classification", orig)
-		cv2.imwrite(f"prediction_image/{start_datetime_string}/{current_model}/prediction_{current_image}.jpg", orig)
+                   probabilities.max().item())
+		cv2.putText(orig, f"Label: {label.strip()}, {prob * 100}% Time :{end_time-start_time} sec",
+                    (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+		cv2.imwrite(f"prediction_images/{start_datetime_string}/{current_model}/prediction_{current_image}.jpg", orig)
+		# cv2.imshow("Classification", orig)
 		# cv2.waitKey(0)
 	print_depth -=1
 	logger(f"total_time: {total_time}. avg: {total_time/counter}")

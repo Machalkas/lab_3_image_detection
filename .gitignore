@@ -2,4 +2,4 @@ env
 .vscode
 __pycache__
 reports
-prediction_image
+prediction_images

@@ -10,10 +10,10 @@ x2 = torch.zeros((1, 3, 224, 224)).cuda()
 x3 = torch.ones((1, 3, 224, 224)).cuda()
 
 # convert to TensorRT feeding sample data as input
-# model = alexnet(pretrained=True).eval().cuda()
-# model_trt = torch2trt(model, [x1], use_onnx=True)
-# torch.save(model_trt.state_dict(), 'alexnet_trt.pth')
-# exit()
+model = alexnet(pretrained=True).eval().cuda()
+model_trt = torch2trt(model, [x1], use_onnx=True)
+torch.save(model_trt.state_dict(), 'alexnet_trt.pth')
+exit()
 
 timest = time.time()
 model_trt = TRTModule()
