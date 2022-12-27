@@ -1,0 +1,14 @@
+2022-12-27 19:10:15.299961 |  images sample: ['Car (14).jpg', '297.jpg', '27.jpg', 'Bike (6).jpg', 'Car (18).jpg', 'Car (14).jpeg', '294.jpg', 'Bike (18).jpg', 'Car (20).jpg', 'Car (14).jpeg']
+2022-12-27 19:10:15.304617 |  Using device cuda
+2022-12-27 19:10:15.304814 |  loading ImageNet labels...
+2022-12-27 19:10:15.354201 | 	 loading model vgg19...
+2022-12-27 19:12:35.131338 | 		 loading image: Car (14).jpg
+2022-12-27 19:12:38.213242 | 		 classifying image with 'vgg19'...
+2022-12-27 19:13:31.443059 | 		 Time passed 56.25786280632019. Image Car (14).jpg result
+2022-12-27 19:13:32.380667 | 			 0. minivan: 60.45866012573242
+2022-12-27 19:13:33.086601 | 			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 9.1402006149292
+2022-12-27 19:13:33.149813 | 			 2. car_wheel: 8.348033905029297
+2022-12-27 19:13:33.164913 | 			 3. grille, radiator_grille: 5.3294291496276855
+2022-12-27 19:13:33.167820 | 			 4. convertible: 4.519776344299316
+2022-12-27 19:13:33.982451 | 		 loading image: Car (14).jpg
+2022-12-27 19:13:37.177253 | 		 Optimyze model vgg19...

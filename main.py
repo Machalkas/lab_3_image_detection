@@ -5,7 +5,6 @@ import numpy as np
 import torch
 from torch import Tensor
 import cv2
-from cv2 import Mat
 from torch import nn
 import time
 import os
@@ -48,7 +47,7 @@ def preprocess_image(image):
 	image = np.expand_dims(image, 0)
 	return image
 
-def classify_image(model, current_image: str, is_tr_model: bool = False)-> Tuple[Optional[Tensor], Optional[Any], Optional[Mat]]:
+def classify_image(model, current_image: str, is_tr_model: bool = False)-> Tuple[Optional[Tensor], Optional[Any], Optional[Any]]:
 	logger(f"loading image:", current_image)
 	image = cv2.imread(f"images/{current_image}")
 	if image is None:
