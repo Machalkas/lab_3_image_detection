@@ -5,6 +5,7 @@ import numpy as np
 import torch
 from torch import Tensor
 import cv2
+from cv2 import Mat
 from torch import nn
 import time
 import os
@@ -47,22 +48,27 @@ def preprocess_image(image):
 	image = np.expand_dims(image, 0)
 	return image
 
-def classify_image(model, current_image: str)-> Tuple[Optional[Tensor], Optional[Any]]:
+def classify_image(model, current_image: str, is_tr_model: bool = False)-> Tuple[Optional[Tensor], Optional[Any], Optional[Mat]]:
 	logger(f"loading image:", current_image)
 	image = cv2.imread(f"images/{current_image}")
 	if image is None:
 		logger(f"Image {current_image} not found!")
-		return None, None
+		return None, None, None
 	orig = image.copy()
 	image = preprocess_image(image)
 	image = torch.from_numpy(image)
 	image = image.to(config.DEVICE)
-
-	logger(f"classifying image with '{current_model}'...")
-	logits = model(image)
+	if is_tr_model:
+		logger(f"Optimyze model {current_model}...")
+		model_trt = torch2trt(model, image, use_onnx=True)
+		logits = model_trt(image)
+		logger(f"classifying image with trt '{current_model}'...")
+	else:
+		logger(f"classifying image with '{current_model}'...")
+		logits = model(image)
 	probabilities = nn.Softmax(dim=-1)(logits)
 	sortedProba = torch.argsort(probabilities, dim=-1, descending=True)
-	return sortedProba, probabilities
+	return sortedProba, probabilities, orig
 
 images_names = os.listdir("images")
 
@@ -94,10 +100,9 @@ for current_model in [models_keys[1]]:
 		counter+=1
 		for is_tr_model in [False, True]:  # if True, then use torch2trt
 			if is_tr_model:
-				logger(f"Optimyze model {current_model}...")
-				model_trt = torch2trt(model, , use_onnx=True)
+				pass
 			start_time = time.time()
-			sortedProba, probabilities = classify_image(model, current_image)
+			sortedProba, probabilities, orig = classify_image(model, current_image, is_tr_model)
 			if sortedProba is None:
 				continue
 			end_time = time.time()
