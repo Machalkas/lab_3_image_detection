@@ -12,6 +12,16 @@ import random
 from typing import Any, Optional, Tuple
 import config
 
+class Model:
+	def __init__(self, model_name, model):
+		self.model_name = model_name
+		self.model = model
+	
+	def get_model(self, name: str):
+		return self.model if self.model_name == name else None
+		
+
+optimized_model = Model(None, None)
 
 start_datetime_string = datetime.strftime(datetime.now(), '%d.%m.%Y %H-%M-%S')
 
@@ -22,6 +32,7 @@ if not os.path.isdir("predicted_images"):
 os.makedirs(f"predicted_images/{start_datetime_string}")
 
 print_depth = 0
+logger_last_end_str = "\n"
 report_file_name = f"reports/image_recognition_report_{start_datetime_string}.txt"
 open(report_file_name, "w").close()
 avg_time_by_model = {}
@@ -31,11 +42,14 @@ def get_str_depth():
 	global print_depth
 	return "\t"*print_depth
 
-def logger(*args):
-	global result_file, report_file_name
-	print(get_str_depth(), *args)
+def logger(*args, end="\n"):
+	global logger_last_end_str, report_file_name
+	default_name = '\n'
+	print(get_str_depth(), *args, end=end)
+	timestamp = f"{datetime.now()} | "
+	logger_last_end_str = end
 	with open(report_file_name, "a") as file:
-		file.write(f"{datetime.now()} | {get_str_depth()} {' '.join([str(arg) for arg in args])}\n")
+		file.write(f"{timestamp if logger_last_end_str == default_name else ''}{get_str_depth()} {' '.join([str(arg) for arg in args])}{end}")
 
 def preprocess_image(image):
 	image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
@@ -47,29 +61,41 @@ def preprocess_image(image):
 	image = np.expand_dims(image, 0)
 	return image
 
-def classify_image(model, current_image: str, is_tr_model: bool = False)-> Tuple[Optional[Tensor], Optional[Tensor], Optional[Any], Optional[float]]:
-	logger(f"loading image:", current_image)
+def classify_image(model, current_image: str, is_tr_model: bool = False, current_model_name: str = "")-> Tuple[Optional[Tensor], Optional[Tensor], Optional[Any], Optional[float]]:
+	global optimized_model
+	logger(f"loading image:", current_image, "...", end="")
 	image = cv2.imread(f"images/{current_image}")
 	if image is None:
-		logger(f"Image {current_image} not found!")
+		logger(f"\n		Image {current_image} not found!")
 		return None, None, None, None
 	orig = image.copy()
 	image = preprocess_image(image)
 	image = torch.from_numpy(image)
 	image = image.to(config.DEVICE)
+	logger("Done")
 	if is_tr_model:
-		logger(f"Optimyze model {current_model}...")
-		model_trt = torch2trt(model, [image], use_onnx=True)
+		model_trt = optimized_model.get_model(current_model_name)
+		if model_trt is None:
+			model_trt = torch2trt(model, [image], use_onnx=False)
+			logger(f"Optimyze model {current_model_name}...")
+			optimized_model = Model(current_model_name, model_trt)
+		else:
+			logger(f"Get optimyzed model {current_model_name} from storege")
+		if model_trt is None:
+			logger(f"Fail to optimize model {current_model_name}. Skip")
+			return None, None, None, None
 		logger(f"Optimization complete")
+		logger(f"Classifying image with trt '{current_model_name}'...", end="")
 		start_time = time.time()
 		logits = model_trt(image)
 		end_time = time.time()
-		logger(f"Classifying image with trt '{current_model}'...")
+		logger("Done")
 	else:
-		logger(f"Classifying image with '{current_model}'...")
+		logger(f"Classifying image with '{current_model_name}'...", end="")
 		start_time = time.time()
 		logits = model(image)
 		end_time = time.time()
+		logger("Done")
 	probabilities = nn.Softmax(dim=-1)(logits)
 	sortedProba = torch.argsort(probabilities, dim=-1, descending=True)
 	return sortedProba, probabilities, orig, end_time-start_time
@@ -77,9 +103,9 @@ def classify_image(model, current_image: str, is_tr_model: bool = False)-> Tuple
 images_names = os.listdir("images")
 
 MODELS = {
-	"vgg16": models.vgg16(pretrained=True),
-	"vgg19": models.vgg19(pretrained=True),
-	"inception": models.inception_v3(pretrained=True),
+	#"vgg16": models.vgg16(pretrained=True),
+	# "vgg19": models.vgg19(pretrained=True),
+	#"inception": models.inception_v3(pretrained=True),
 	"densenet": models.densenet121(pretrained=True),
 	"resnet": models.resnet50(pretrained=True),
 	"mobilenet": models.mobilenet_v3_small(pretrained=True)
@@ -93,10 +119,10 @@ logger(f"Using device {config.DEVICE}")
 logger(f"loading ImageNet labels...")
 imagenetLabels = dict(enumerate(open(config.IN_LABELS)))
 print_depth +=1
-for current_model in models_keys:
-	logger(f"loading model {current_model}...")
-	os.makedirs(f"predicted_images/{start_datetime_string}/{current_model}")
-	model = MODELS[current_model].to(config.DEVICE)
+for current_model_name in models_keys:
+	logger(f"loading model {current_model_name}...")
+	os.makedirs(f"predicted_images/{start_datetime_string}/{current_model_name}")
+	model = MODELS[current_model_name].to(config.DEVICE)
 	model.eval()
 	print_depth +=1
 	counter = 0
@@ -108,7 +134,10 @@ for current_model in models_keys:
 			if is_tr_model:
 				pass
 			start_time = time.time()
-			sortedProba, probabilities, orig, time_pass = classify_image(model, current_image, is_tr_model)
+			try:
+				sortedProba, probabilities, orig, time_pass = classify_image(model, current_image, is_tr_model, current_model_name)
+			except Exception:
+				continue
 			if sortedProba is None:
 				continue
 			end_time = time.time()
@@ -125,12 +154,12 @@ for current_model in models_keys:
                             probabilities.max().item())
 			cv2.putText(orig, f"Label: {label.strip()}, {prob * 100}% Time :{time_pass} sec",
 						(10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-			cv2.imwrite(f"predicted_images/{start_datetime_string}/{current_model}/prediction_{current_image}.jpg", orig)
+			cv2.imwrite(f"predicted_images/{start_datetime_string}/{current_model_name}/prediction_{current_image}.jpg", orig)
 		# cv2.imshow("Classification", orig)
 		# cv2.waitKey(0)
 	print_depth -= 1
 	logger(f"total_time: {total_time}. avg: {total_time/counter}. avg optimize: {total_optimize_time/counter}")
-	avg_time_by_model[current_model] = {"avg": total_time/counter, "avg_optimize": total_optimize_time/counter}
+	avg_time_by_model[current_model_name] = {"avg": total_time/counter, "avg_optimize": total_optimize_time/counter}
 print_depth -=1
 
 avg_time_by_model = dict(sorted(avg_time_by_model.items(), key=lambda item: item[1]["avg"] if item[1]["avg"]<item[1]["avg_optimize"] else item[1]["avg_optimize"]))

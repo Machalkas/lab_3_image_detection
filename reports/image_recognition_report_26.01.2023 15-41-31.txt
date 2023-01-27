@@ -1,0 +1,14 @@
+2023-01-26 15:42:29.198456 |  images sample: ['Car (24).jpeg', 'Bike (4).jpeg', '21.jpg', 'Bike (22).png', 'Car (13).jpg', 'Bike (23).jpeg', 'Bike (24).png', 'Car (10).jpg', 'Bike (8).jpeg', '281.jpg']
+2023-01-26 15:42:29.198952 |  Using device cuda
+2023-01-26 15:42:29.199150 |  loading ImageNet labels...
+2023-01-26 15:42:29.222459 | 	 loading model vgg19...
+2023-01-26 15:46:10.504562 | 		 loading image: Car (24).jpeg
+2023-01-26 15:46:12.505667 | 		 Classifying image with 'vgg19'...
+2023-01-26 15:48:51.467965 | 		 Time passed 157.34648418426514. Image Car (24).jpeg result
+2023-01-26 15:48:52.625820 | 			 0. sports_car, sport_car: 66.52877044677734
+2023-01-26 15:48:52.709696 | 			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 8.911822319030762
+2023-01-26 15:48:52.717984 | 			 2. minivan: 8.164410591125488
+2023-01-26 15:48:52.737257 | 			 3. limousine, limo: 3.889820098876953
+2023-01-26 15:48:52.754687 | 			 4. car_wheel: 3.6387252807617188
+2023-01-26 15:48:53.484438 | 		 loading image: Car (24).jpeg
+2023-01-26 15:48:54.487089 | 		 Optimyze model vgg19...

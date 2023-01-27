@@ -1,0 +1,14 @@
+2022-12-29 23:42:55.444144 |  images sample: ['Bike (16).jpeg', '32.jpg', 'Bike (2).png', 'Car (1).png', 'Car (22).jpg', '189.jpg', '295.jpg', 'Car (22).jpg', '219.jpg', 'Bike (22).png']
+2022-12-29 23:42:55.444464 |  Using device cuda
+2022-12-29 23:42:55.444633 |  loading ImageNet labels...
+2022-12-29 23:42:55.447961 | 	 loading model mobilenet...
+2022-12-29 23:43:06.667747 | 		 loading image: Bike (16).jpeg
+2022-12-29 23:43:06.761734 | 		 Classifying image with 'mobilenet'...
+2022-12-29 23:43:26.981912 | 		 Time passed 19.685849905014038. Image Bike (16).jpeg result
+2022-12-29 23:43:27.844505 | 			 0. moped: 71.87796020507812
+2022-12-29 23:43:27.846944 | 			 1. motor_scooter, scooter: 12.615485191345215
+2022-12-29 23:43:27.848713 | 			 2. bicycle-built-for-two, tandem_bicycle, tandem: 9.4176025390625
+2022-12-29 23:43:27.849846 | 			 3. crash_helmet: 1.0270670652389526
+2022-12-29 23:43:27.850870 | 			 4. disk_brake, disc_brake: 0.5145230293273926
+2022-12-29 23:43:28.107142 | 		 loading image: Bike (16).jpeg
+2022-12-29 23:43:28.530766 | 		 Optimyze model mobilenet...

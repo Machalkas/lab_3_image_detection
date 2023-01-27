@@ -1,0 +1,15 @@
+2022-12-30 00:06:31.065676 |  images sample: ['Bike (5).jpeg', 'Car (14).jpg', '210.jpg', 'Car (31).jpg', 'Car (6).jpg', '18.jpg', 'Bike (11).jpeg', 'Bike (24).jpeg', '21.jpg', 'Bike (25).png']
+2022-12-30 00:06:31.066103 |  Using device cuda
+2022-12-30 00:06:31.066316 |  loading ImageNet labels...
+2022-12-30 00:06:31.070010 | 	 loading model vgg19...
+2022-12-30 00:06:51.792574 | 		 loading image: Bike (5).jpeg
+2022-12-30 00:06:52.438955 | 		 Classifying image with 'vgg19'...
+2022-12-30 00:07:49.610394 | 		 Time passed 57.087594747543335. Image Bike (5).jpeg result
+2022-12-30 00:07:49.845009 | 			 0. moped: 19.66249656677246
+2022-12-30 00:07:49.863644 | 			 1. tricycle, trike, velocipede: 8.959174156188965
+2022-12-30 00:07:49.866646 | 			 2. mountain_bike, all-terrain_bike, off-roader: 7.127253532409668
+2022-12-30 00:07:49.875313 | 			 3. bicycle-built-for-two, tandem_bicycle, tandem: 6.829661846160889
+2022-12-30 00:07:49.880748 | 			 4. sliding_door: 3.863706350326538
+2022-12-30 00:07:50.104622 | 		 loading image: Bike (5).jpeg
+2022-12-30 00:07:50.345372 | 		 Optimyze model vgg19...
+2022-12-30 00:10:18.820933 | 		 Optimization complete

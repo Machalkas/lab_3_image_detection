@@ -1,0 +1,13 @@
+2023-01-26 22:17:37.974530 |  images sample: ['Car (7).jpeg', 'Car (26).jpeg', 'Bike (12).jpeg', 'Car (4).png', '282.jpg', 'Bike (9).jpeg', 'Car (18).jpeg', 'Car (2).png', 'Bike (22).png', '7.jpg']
+2023-01-26 22:17:37.990327 |  Using device cuda
+2023-01-26 22:17:37.990797 |  loading ImageNet labels...
+2023-01-26 22:17:38.013736 | 	 loading model resnet...
+		 loading image: Car (7).jpeg ...2023-01-26 22:21:24.021990 | 		 Done
+		 Classifying image with 'resnet'...2023-01-26 22:24:10.675937 | 		 Done
+2023-01-26 22:24:15.663751 | 		 Time passed 164.99582815170288. Image Car (7).jpeg result
+2023-01-26 22:24:17.912033 | 			 0. sports_car, sport_car: 23.429887771606445
+2023-01-26 22:24:17.931766 | 			 1. convertible: 22.968364715576172
+2023-01-26 22:24:18.046431 | 			 2. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 22.045654296875
+2023-01-26 22:24:18.058321 | 			 3. grille, radiator_grille: 9.806041717529297
+2023-01-26 22:24:18.078542 | 			 4. racer, race_car, racing_car: 8.146778106689453
+		 loading image: Car (7).jpeg ...2023-01-26 22:24:19.270978 | 		 Done

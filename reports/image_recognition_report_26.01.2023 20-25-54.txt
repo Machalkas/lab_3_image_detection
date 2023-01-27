@@ -1,0 +1,189 @@
+2023-01-26 20:25:55.530768 |  images sample: ['267.jpg', 'Car (11).jpeg', 'Bike (13).jpeg', 'Bike (7).jpg', '280.jpg', '37.jpg', 'Car (5).jpeg', 'Bike (5).jpg', 'Bike (11).jpeg', '201.jpg']
+2023-01-26 20:25:55.531100 |  Using device cuda
+2023-01-26 20:25:55.531300 |  loading ImageNet labels...
+2023-01-26 20:25:55.541631 | 	 loading model mobilenet...
+2023-01-26 20:28:06.913801 | 		 loading image: 267.jpg
+2023-01-26 20:28:19.828760 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:30:33.220740 | 		 Time passed 130.81135892868042. Image 267.jpg result
+2023-01-26 20:30:34.300509 | 			 0. fireboat: 95.90177917480469
+2023-01-26 20:30:34.316050 | 			 1. lifeboat: 3.739325761795044
+2023-01-26 20:30:34.328585 | 			 2. dock, dockage, docking_facility: 0.1266123652458191
+2023-01-26 20:30:34.355395 | 			 3. pirate, pirate_ship: 0.05644194781780243
+2023-01-26 20:30:34.488229 | 			 4. trimaran: 0.03441718965768814
+2023-01-26 20:30:38.308103 | 		 loading image: 267.jpg
+2023-01-26 20:30:40.400410 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:06.403949 | 		 Optimization complete
+2023-01-26 20:34:09.232913 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:10.035096 | 		 Time passed 2.7570009231567383. Image 267.jpg result
+2023-01-26 20:34:10.168914 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:10.170962 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:10.174496 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:10.178139 | 			 3. bolete: nan
+2023-01-26 20:34:10.183655 | 			 4. gyromitra: nan
+2023-01-26 20:34:10.726454 | 		 loading image: Car (11).jpeg
+2023-01-26 20:34:10.879961 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:11.289419 | 		 Time passed 0.4050147533416748. Image Car (11).jpeg result
+2023-01-26 20:34:11.316667 | 			 0. minivan: 28.682188034057617
+2023-01-26 20:34:11.324487 | 			 1. grille, radiator_grille: 14.52612590789795
+2023-01-26 20:34:11.330906 | 			 2. sports_car, sport_car: 14.395912170410156
+2023-01-26 20:34:11.344870 | 			 3. pickup, pickup_truck: 11.022801399230957
+2023-01-26 20:34:11.349552 | 			 4. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 10.837821960449219
+2023-01-26 20:34:11.360515 | 		 loading image: Car (11).jpeg
+2023-01-26 20:34:11.387687 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:11.388365 | 		 Optimization complete
+2023-01-26 20:34:11.429746 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:11.436736 | 		 Time passed 0.040888071060180664. Image Car (11).jpeg result
+2023-01-26 20:34:11.488432 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:11.493028 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:11.507269 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:11.513893 | 			 3. bolete: nan
+2023-01-26 20:34:11.518886 | 			 4. gyromitra: nan
+2023-01-26 20:34:11.539178 | 		 loading image: Bike (13).jpeg
+2023-01-26 20:34:11.574718 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:11.678946 | 		 Time passed 0.10245203971862793. Image Bike (13).jpeg result
+2023-01-26 20:34:11.681816 | 			 0. moped: 51.61783218383789
+2023-01-26 20:34:11.682718 | 			 1. motor_scooter, scooter: 24.855712890625
+2023-01-26 20:34:11.684584 | 			 2. tricycle, trike, velocipede: 6.015437602996826
+2023-01-26 20:34:11.687982 | 			 3. bicycle-built-for-two, tandem_bicycle, tandem: 5.4690961837768555
+2023-01-26 20:34:11.697077 | 			 4. disk_brake, disc_brake: 4.125546932220459
+2023-01-26 20:34:11.702633 | 		 loading image: Bike (13).jpeg
+2023-01-26 20:34:11.733182 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:11.734693 | 		 Optimization complete
+2023-01-26 20:34:11.760519 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:11.774347 | 		 Time passed 0.024724483489990234. Image Bike (13).jpeg result
+2023-01-26 20:34:11.779874 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:11.781587 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:11.783051 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:11.784966 | 			 3. bolete: nan
+2023-01-26 20:34:11.787085 | 			 4. gyromitra: nan
+2023-01-26 20:34:11.790671 | 		 loading image: Bike (7).jpg
+2023-01-26 20:34:11.943907 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:12.098412 | 		 Time passed 0.15063905715942383. Image Bike (7).jpg result
+2023-01-26 20:34:12.102565 | 			 0. mountain_bike, all-terrain_bike, off-roader: 37.78630447387695
+2023-01-26 20:34:12.105208 | 			 1. motor_scooter, scooter: 23.018896102905273
+2023-01-26 20:34:12.108175 | 			 2. moped: 7.076990604400635
+2023-01-26 20:34:12.176994 | 			 3. tractor: 5.103118896484375
+2023-01-26 20:34:12.178895 | 			 4. racer, race_car, racing_car: 4.224062919616699
+2023-01-26 20:34:12.202594 | 		 loading image: Bike (7).jpg
+2023-01-26 20:34:12.238274 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:12.238782 | 		 Optimization complete
+2023-01-26 20:34:12.266609 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:12.277551 | 		 Time passed 0.026913881301879883. Image Bike (7).jpg result
+2023-01-26 20:34:12.281107 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:12.284298 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:12.288235 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:12.290810 | 			 3. bolete: nan
+2023-01-26 20:34:12.293346 | 			 4. gyromitra: nan
+2023-01-26 20:34:12.304353 | 		 loading image: 280.jpg
+2023-01-26 20:34:12.442819 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:12.602638 | 		 Time passed 0.15266871452331543. Image 280.jpg result
+2023-01-26 20:34:12.605660 | 			 0. catamaran: 59.19511795043945
+2023-01-26 20:34:12.606897 | 			 1. yawl: 26.388925552368164
+2023-01-26 20:34:12.608406 | 			 2. schooner: 6.746926784515381
+2023-01-26 20:34:12.609519 | 			 3. trimaran: 4.047196865081787
+2023-01-26 20:34:12.610566 | 			 4. pirate, pirate_ship: 1.7274526357650757
+2023-01-26 20:34:12.657077 | 		 loading image: 280.jpg
+2023-01-26 20:34:12.749400 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:12.750800 | 		 Optimization complete
+2023-01-26 20:34:12.773150 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:12.780948 | 		 Time passed 0.021413087844848633. Image 280.jpg result
+2023-01-26 20:34:12.786961 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:12.789042 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:12.791520 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:12.793612 | 			 3. bolete: nan
+2023-01-26 20:34:12.795145 | 			 4. gyromitra: nan
+2023-01-26 20:34:12.850632 | 		 loading image: 37.jpg
+2023-01-26 20:34:13.691999 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:13.823542 | 		 Time passed 0.12833642959594727. Image 37.jpg result
+2023-01-26 20:34:13.826797 | 			 0. cradle: 33.90584182739258
+2023-01-26 20:34:13.828847 | 			 1. scale, weighing_machine: 10.578259468078613
+2023-01-26 20:34:13.832083 | 			 2. jigsaw_puzzle: 9.985292434692383
+2023-01-26 20:34:13.834995 | 			 3. carton: 5.732930660247803
+2023-01-26 20:34:13.838223 | 			 4. rocking_chair, rocker: 4.046698093414307
+2023-01-26 20:34:13.897654 | 		 loading image: 37.jpg
+2023-01-26 20:34:14.012788 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:14.013723 | 		 Optimization complete
+2023-01-26 20:34:14.057224 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:14.060569 | 		 Time passed 0.042913198471069336. Image 37.jpg result
+2023-01-26 20:34:14.062672 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:14.065176 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:14.066795 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:14.071524 | 			 3. bolete: nan
+2023-01-26 20:34:14.074438 | 			 4. gyromitra: nan
+2023-01-26 20:34:14.146737 | 		 loading image: Car (5).jpeg
+2023-01-26 20:34:14.187083 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:14.347614 | 		 Time passed 0.15845489501953125. Image Car (5).jpeg result
+2023-01-26 20:34:14.349550 | 			 0. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 48.511741638183594
+2023-01-26 20:34:14.351682 | 			 1. minivan: 20.218364715576172
+2023-01-26 20:34:14.353261 | 			 2. sports_car, sport_car: 13.511456489562988
+2023-01-26 20:34:14.354730 | 			 3. convertible: 7.903171539306641
+2023-01-26 20:34:14.356389 | 			 4. pickup, pickup_truck: 3.8568363189697266
+2023-01-26 20:34:14.361892 | 		 loading image: Car (5).jpeg
+2023-01-26 20:34:14.385163 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:14.386168 | 		 Optimization complete
+2023-01-26 20:34:14.415643 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:14.425408 | 		 Time passed 0.028008222579956055. Image Car (5).jpeg result
+2023-01-26 20:34:14.429679 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:14.432233 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:14.434748 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:14.437297 | 			 3. bolete: nan
+2023-01-26 20:34:14.439907 | 			 4. gyromitra: nan
+2023-01-26 20:34:14.444573 | 		 loading image: Bike (5).jpg
+2023-01-26 20:34:14.555043 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:14.677440 | 		 Time passed 0.11917567253112793. Image Bike (5).jpg result
+2023-01-26 20:34:14.680281 | 			 0. crash_helmet: 25.429311752319336
+2023-01-26 20:34:14.682528 | 			 1. mountain_bike, all-terrain_bike, off-roader: 18.451234817504883
+2023-01-26 20:34:14.684749 | 			 2. moped: 5.40107536315918
+2023-01-26 20:34:14.687234 | 			 3. barrel, cask: 4.778522968292236
+2023-01-26 20:34:14.689626 | 			 4. rifle: 3.865293502807617
+2023-01-26 20:34:14.738926 | 		 loading image: Bike (5).jpg
+2023-01-26 20:34:14.811115 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:14.811608 | 		 Optimization complete
+2023-01-26 20:34:14.832415 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:14.840027 | 		 Time passed 0.019489049911499023. Image Bike (5).jpg result
+2023-01-26 20:34:14.855089 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:14.864552 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:14.872254 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:14.875232 | 			 3. bolete: nan
+2023-01-26 20:34:14.880615 | 			 4. gyromitra: nan
+2023-01-26 20:34:14.961370 | 		 loading image: Bike (11).jpeg
+2023-01-26 20:34:14.996139 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:15.128087 | 		 Time passed 0.12907123565673828. Image Bike (11).jpeg result
+2023-01-26 20:34:15.133370 | 			 0. moped: 69.28530883789062
+2023-01-26 20:34:15.134501 | 			 1. tricycle, trike, velocipede: 9.930441856384277
+2023-01-26 20:34:15.135304 | 			 2. motor_scooter, scooter: 7.443500518798828
+2023-01-26 20:34:15.136248 | 			 3. disk_brake, disc_brake: 5.843977451324463
+2023-01-26 20:34:15.137141 | 			 4. bicycle-built-for-two, tandem_bicycle, tandem: 3.2118239402770996
+2023-01-26 20:34:15.142175 | 		 loading image: Bike (11).jpeg
+2023-01-26 20:34:15.160206 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:15.160713 | 		 Optimization complete
+2023-01-26 20:34:15.178640 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:15.186619 | 		 Time passed 0.017269134521484375. Image Bike (11).jpeg result
+2023-01-26 20:34:15.201459 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:15.211096 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:15.213327 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:15.215082 | 			 3. bolete: nan
+2023-01-26 20:34:15.216321 | 			 4. gyromitra: nan
+2023-01-26 20:34:15.224623 | 		 loading image: 201.jpg
+2023-01-26 20:34:15.317509 | 		 Classifying image with 'mobilenet'...
+2023-01-26 20:34:15.465368 | 		 Time passed 0.14420294761657715. Image 201.jpg result
+2023-01-26 20:34:15.469691 | 			 0. canoe: 56.68451690673828
+2023-01-26 20:34:15.471494 | 			 1. paddle, boat_paddle: 18.50651741027832
+2023-01-26 20:34:15.473610 | 			 2. lifeboat: 14.970949172973633
+2023-01-26 20:34:15.477823 | 			 3. catamaran: 4.680917263031006
+2023-01-26 20:34:15.480524 | 			 4. speedboat: 3.635481834411621
+2023-01-26 20:34:15.545668 | 		 loading image: 201.jpg
+2023-01-26 20:34:15.626737 | 		 Optimyze model mobilenet...
+2023-01-26 20:34:15.627940 | 		 Optimization complete
+2023-01-26 20:34:15.649299 | 		 Classifying image with trt 'mobilenet'...
+2023-01-26 20:34:15.660014 | 		 Time passed 0.0202634334564209. Image 201.jpg result
+2023-01-26 20:34:15.662014 | 			 0. toilet_tissue, toilet_paper, bathroom_tissue: nan
+2023-01-26 20:34:15.663456 | 			 1. ear, spike, capitulum: nan
+2023-01-26 20:34:15.664880 | 			 2. hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa: nan
+2023-01-26 20:34:15.666345 | 			 3. bolete: nan
+2023-01-26 20:34:15.667850 | 			 4. gyromitra: nan
+2023-01-26 20:34:15.726812 | 	 total_time: 132.30137467384338. avg: 13.230137467384338. avg optimize: 0.2998883485794067
+2023-01-26 20:34:15.752773 |  -----------------
+RESUME
+2023-01-26 20:34:15.753560 | 	 model: avg
+2023-01-26 20:34:15.763595 | 	 mobilenet: {'avg': 13.230137467384338, 'avg_optimize': 0.2998883485794067}

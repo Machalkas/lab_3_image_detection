@@ -1,0 +1,14 @@
+2023-01-26 18:24:22.917710 |  images sample: ['184.jpg', 'Bike (4).jpg', 'Bike (2).jpg', 'Car (17).jpg', 'Bike (18).jpg', '27.jpg', 'Bike (14).png', 'Bike (23).png', '184.jpg', '260.jpg']
+2023-01-26 18:24:25.301334 |  Using device cuda
+2023-01-26 18:24:25.301555 |  loading ImageNet labels...
+2023-01-26 18:24:25.365874 | 	 loading model vgg19...
+2023-01-26 18:29:50.508871 | 		 loading image: 184.jpg
+2023-01-26 18:29:57.267952 | 		 Classifying image with 'vgg19'...
+2023-01-26 18:32:56.713009 | 		 Time passed 178.42891478538513. Image 184.jpg result
+2023-01-26 18:33:02.538112 | 			 0. liner, ocean_liner: 98.23334503173828
+2023-01-26 18:33:02.556001 | 			 1. dock, dockage, docking_facility: 1.5289819240570068
+2023-01-26 18:33:02.791959 | 			 2. fireboat: 0.16566793620586395
+2023-01-26 18:33:02.797257 | 			 3. paddlewheel, paddle_wheel: 0.020940320566296577
+2023-01-26 18:33:02.816773 | 			 4. lifeboat: 0.014628797769546509
+2023-01-26 18:33:12.221511 | 		 loading image: 184.jpg
+2023-01-26 18:33:17.433617 | 		 Optimyze model vgg19...

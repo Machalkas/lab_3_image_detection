@@ -1,0 +1,195 @@
+2023-01-26 23:17:57.288614 |  images sample: ['267.jpg', 'Bike (19).jpeg', 'Car (3).jpg', 'Car (26).jpeg', 'Car (33).jpeg', 'Car (12).jpg', 'Bike (22).png', 'Car (28).jpeg', 'Bike (7).jpg', '253.jpg']
+2023-01-26 23:17:57.289035 |  Using device cuda
+2023-01-26 23:17:57.289354 |  loading ImageNet labels...
+2023-01-26 23:17:57.292493 | 	 loading model densenet...
+		 loading image: 267.jpg ...2023-01-26 23:20:58.481336 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:22:59.878502 | 		 Done
+2023-01-26 23:23:04.722376 | 		 Time passed 121.11861300468445. Image 267.jpg result
+2023-01-26 23:23:06.184819 | 			 0. fireboat: 73.14116668701172
+2023-01-26 23:23:06.200147 | 			 1. fire_engine, fire_truck: 10.344035148620605
+2023-01-26 23:23:06.204101 | 			 2. container_ship, containership, container_vessel: 3.887983798980713
+2023-01-26 23:23:06.227569 | 			 3. streetcar, tram, tramcar, trolley, trolley_car: 2.623225450515747
+2023-01-26 23:23:06.240643 | 			 4. tow_truck, tow_car, wrecker: 2.2402398586273193
+		 loading image: 267.jpg ...2023-01-26 23:23:15.490763 | 		 Done
+2023-01-26 23:29:37.493314 | 		 Optimyze model densenet...
+2023-01-26 23:29:37.877815 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:29:45.153626 | 		 Done
+2023-01-26 23:29:47.737189 | 		 Time passed 7.245721817016602. Image 267.jpg result
+2023-01-26 23:29:48.095412 | 			 0. fireboat: 73.14118957519531
+2023-01-26 23:29:48.125724 | 			 1. fire_engine, fire_truck: 10.344008445739746
+2023-01-26 23:29:48.128407 | 			 2. container_ship, containership, container_vessel: 3.88798451423645
+2023-01-26 23:29:48.155399 | 			 3. streetcar, tram, tramcar, trolley, trolley_car: 2.6232290267944336
+2023-01-26 23:29:48.198444 | 			 4. tow_truck, tow_car, wrecker: 2.240231990814209
+		 loading image: Bike (19).jpeg ...2023-01-26 23:29:55.481371 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:30:12.646278 | 		 Done
+2023-01-26 23:30:13.193359 | 		 Time passed 17.141088485717773. Image Bike (19).jpeg result
+2023-01-26 23:30:13.575591 | 			 0. motor_scooter, scooter: 61.80369186401367
+2023-01-26 23:30:13.608391 | 			 1. moped: 27.672550201416016
+2023-01-26 23:30:13.611197 | 			 2. mountain_bike, all-terrain_bike, off-roader: 3.753099203109741
+2023-01-26 23:30:13.616102 | 			 3. comic_book: 0.7691670060157776
+2023-01-26 23:30:13.626394 | 			 4. disk_brake, disc_brake: 0.4342564046382904
+		 loading image: Bike (19).jpeg ...2023-01-26 23:30:17.847975 | 		 Done
+2023-01-26 23:30:17.848799 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:30:17.849081 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:30:22.159486 | 		 Done
+2023-01-26 23:30:24.981110 | 		 Time passed 4.294605255126953. Image Bike (19).jpeg result
+2023-01-26 23:30:29.170314 | 			 0. motor_scooter, scooter: 61.8037109375
+2023-01-26 23:30:29.232582 | 			 1. moped: 27.67253303527832
+2023-01-26 23:30:29.255625 | 			 2. mountain_bike, all-terrain_bike, off-roader: 3.7530899047851562
+2023-01-26 23:30:29.257802 | 			 3. comic_book: 0.7691654562950134
+2023-01-26 23:30:29.259791 | 			 4. disk_brake, disc_brake: 0.4342559576034546
+		 loading image: Car (3).jpg ...2023-01-26 23:30:33.786130 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:30:40.169041 | 		 Done
+2023-01-26 23:30:40.519372 | 		 Time passed 6.357114553451538. Image Car (3).jpg result
+2023-01-26 23:30:40.850596 | 			 0. minivan: 47.97378921508789
+2023-01-26 23:30:40.857591 | 			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 18.008899688720703
+2023-01-26 23:30:40.859129 | 			 2. car_wheel: 15.377819061279297
+2023-01-26 23:30:40.860400 | 			 3. grille, radiator_grille: 6.237316131591797
+2023-01-26 23:30:40.863981 | 			 4. pickup, pickup_truck: 3.793546676635742
+		 loading image: Car (3).jpg ...2023-01-26 23:30:43.849488 | 		 Done
+2023-01-26 23:30:43.850417 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:30:43.850918 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:30:45.766213 | 		 Done
+2023-01-26 23:30:46.441469 | 		 Time passed 1.9139103889465332. Image Car (3).jpg result
+2023-01-26 23:30:46.521938 | 			 0. minivan: 47.97370529174805
+2023-01-26 23:30:46.525066 | 			 1. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 18.008970260620117
+2023-01-26 23:30:46.526487 | 			 2. car_wheel: 15.37783432006836
+2023-01-26 23:30:46.528105 | 			 3. grille, radiator_grille: 6.237310409545898
+2023-01-26 23:30:46.532915 | 			 4. pickup, pickup_truck: 3.7935540676116943
+		 loading image: Car (26).jpeg ...2023-01-26 23:30:47.227015 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:30:48.998004 | 		 Done
+2023-01-26 23:30:49.001537 | 		 Time passed 1.7689495086669922. Image Car (26).jpeg result
+2023-01-26 23:30:49.135835 | 			 0. sports_car, sport_car: 79.12064361572266
+2023-01-26 23:30:49.138440 | 			 1. racer, race_car, racing_car: 15.499764442443848
+2023-01-26 23:30:49.140663 | 			 2. car_wheel: 3.091205596923828
+2023-01-26 23:30:49.142203 | 			 3. cab, hack, taxi, taxicab: 0.9192625880241394
+2023-01-26 23:30:49.143292 | 			 4. grille, radiator_grille: 0.46237972378730774
+		 loading image: Car (26).jpeg ...2023-01-26 23:30:49.598771 | 		 Done
+2023-01-26 23:30:49.599119 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:30:49.599902 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:30:50.860774 | 		 Done
+2023-01-26 23:30:50.880979 | 		 Time passed 1.2603695392608643. Image Car (26).jpeg result
+2023-01-26 23:30:50.963338 | 			 0. sports_car, sport_car: 79.1205825805664
+2023-01-26 23:30:50.966437 | 			 1. racer, race_car, racing_car: 15.4998140335083
+2023-01-26 23:30:50.968215 | 			 2. car_wheel: 3.0912094116210938
+2023-01-26 23:30:50.969942 | 			 3. cab, hack, taxi, taxicab: 0.919264554977417
+2023-01-26 23:30:50.971930 | 			 4. grille, radiator_grille: 0.4623802900314331
+		 loading image: Car (33).jpeg ...2023-01-26 23:30:51.109872 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:30:51.566931 | 		 Done
+2023-01-26 23:30:51.568975 | 		 Time passed 0.4561126232147217. Image Car (33).jpeg result
+2023-01-26 23:30:51.570192 | 			 0. sports_car, sport_car: 26.507434844970703
+2023-01-26 23:30:51.571001 | 			 1. car_wheel: 25.000322341918945
+2023-01-26 23:30:51.571758 | 			 2. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 7.480059623718262
+2023-01-26 23:30:51.572473 | 			 3. minivan: 5.868462085723877
+2023-01-26 23:30:51.573206 | 			 4. limousine, limo: 5.156542778015137
+		 loading image: Car (33).jpeg ...2023-01-26 23:30:51.919019 | 		 Done
+2023-01-26 23:30:51.919623 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:30:51.920077 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:30:52.075344 | 		 Done
+2023-01-26 23:30:52.091782 | 		 Time passed 0.15422487258911133. Image Car (33).jpeg result
+2023-01-26 23:30:52.247595 | 			 0. sports_car, sport_car: 26.507537841796875
+2023-01-26 23:30:52.253098 | 			 1. car_wheel: 25.000301361083984
+2023-01-26 23:30:52.253919 | 			 2. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 7.480025291442871
+2023-01-26 23:30:52.254997 | 			 3. minivan: 5.868429660797119
+2023-01-26 23:30:52.378134 | 			 4. limousine, limo: 5.156553268432617
+		 loading image: Car (12).jpg ...2023-01-26 23:30:58.235363 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:31:04.264973 | 		 Done
+2023-01-26 23:31:05.782486 | 		 Time passed 5.945643424987793. Image Car (12).jpg result
+2023-01-26 23:31:08.960119 | 			 0. sports_car, sport_car: 54.25394821166992
+2023-01-26 23:31:08.967834 | 			 1. racer, race_car, racing_car: 29.611059188842773
+2023-01-26 23:31:08.969323 | 			 2. car_wheel: 4.947848796844482
+2023-01-26 23:31:08.970729 | 			 3. convertible: 3.0983223915100098
+2023-01-26 23:31:09.058818 | 			 4. grille, radiator_grille: 3.020970106124878
+		 loading image: Car (12).jpg ...2023-01-26 23:31:20.597153 | 		 Done
+2023-01-26 23:31:20.601168 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:31:20.601468 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:31:24.676044 | 		 Done
+2023-01-26 23:31:25.437900 | 		 Time passed 4.073918581008911. Image Car (12).jpg result
+2023-01-26 23:31:25.764976 | 			 0. sports_car, sport_car: 54.25394058227539
+2023-01-26 23:31:25.769074 | 			 1. racer, race_car, racing_car: 29.61111068725586
+2023-01-26 23:31:25.778950 | 			 2. car_wheel: 4.947829246520996
+2023-01-26 23:31:25.829228 | 			 3. convertible: 3.0983164310455322
+2023-01-26 23:31:25.840323 | 			 4. grille, radiator_grille: 3.020961284637451
+		 loading image: Bike (22).png ...2023-01-26 23:31:29.646882 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:31:33.883352 | 		 Done
+2023-01-26 23:31:34.712425 | 		 Time passed 4.2083046436309814. Image Bike (22).png result
+2023-01-26 23:31:35.407362 | 			 0. motor_scooter, scooter: 74.95490264892578
+2023-01-26 23:31:35.415290 | 			 1. moped: 24.963970184326172
+2023-01-26 23:31:35.416618 | 			 2. neck_brace: 0.03587651997804642
+2023-01-26 23:31:35.440519 | 			 3. disk_brake, disc_brake: 0.010930236428976059
+2023-01-26 23:31:35.442220 | 			 4. crash_helmet: 0.01044887863099575
+		 loading image: Bike (22).png ...2023-01-26 23:31:40.750494 | 		 Done
+2023-01-26 23:31:40.756925 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:31:40.757152 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:31:42.542948 | 		 Done
+2023-01-26 23:31:42.892081 | 		 Time passed 1.7821884155273438. Image Bike (22).png result
+2023-01-26 23:31:42.997633 | 			 0. motor_scooter, scooter: 74.95490264892578
+2023-01-26 23:31:43.000544 | 			 1. moped: 24.963970184326172
+2023-01-26 23:31:43.001459 | 			 2. neck_brace: 0.035876449197530746
+2023-01-26 23:31:43.002597 | 			 3. disk_brake, disc_brake: 0.01093018427491188
+2023-01-26 23:31:43.029995 | 			 4. crash_helmet: 0.010448849759995937
+		 loading image: Car (28).jpeg ...2023-01-26 23:31:45.816171 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:31:48.407410 | 		 Done
+2023-01-26 23:31:48.980931 | 		 Time passed 2.5382702350616455. Image Car (28).jpeg result
+2023-01-26 23:31:49.639704 | 			 0. car_wheel: 42.21451950073242
+2023-01-26 23:31:49.654911 | 			 1. sports_car, sport_car: 24.66755485534668
+2023-01-26 23:31:49.668517 | 			 2. grille, radiator_grille: 7.37590217590332
+2023-01-26 23:31:49.704026 | 			 3. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 6.968203067779541
+2023-01-26 23:31:49.729024 | 			 4. convertible: 6.0629191398620605
+		 loading image: Car (28).jpeg ...2023-01-26 23:31:51.101296 | 		 Done
+2023-01-26 23:31:51.102131 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:31:51.102429 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:31:53.365227 | 		 Done
+2023-01-26 23:31:55.278966 | 		 Time passed 2.2615957260131836. Image Car (28).jpeg result
+2023-01-26 23:31:55.660541 | 			 0. car_wheel: 42.21453094482422
+2023-01-26 23:31:55.663543 | 			 1. sports_car, sport_car: 24.667539596557617
+2023-01-26 23:31:55.666359 | 			 2. grille, radiator_grille: 7.375876426696777
+2023-01-26 23:31:55.668444 | 			 3. beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon: 6.9682111740112305
+2023-01-26 23:31:55.670216 | 			 4. convertible: 6.062921047210693
+		 loading image: Bike (7).jpg ...2023-01-26 23:31:56.099589 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:31:58.439483 | 		 Done
+2023-01-26 23:31:59.834686 | 		 Time passed 2.309662103652954. Image Bike (7).jpg result
+2023-01-26 23:32:01.440603 | 			 0. mountain_bike, all-terrain_bike, off-roader: 31.810155868530273
+2023-01-26 23:32:01.450202 | 			 1. crash_helmet: 20.40030288696289
+2023-01-26 23:32:01.451213 | 			 2. disk_brake, disc_brake: 9.440145492553711
+2023-01-26 23:32:01.452405 | 			 3. motor_scooter, scooter: 8.630810737609863
+2023-01-26 23:32:01.453415 | 			 4. moped: 5.583130359649658
+		 loading image: Bike (7).jpg ...2023-01-26 23:32:02.681857 | 		 Done
+2023-01-26 23:32:02.693433 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:32:02.693898 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:32:06.271348 | 		 Done
+2023-01-26 23:32:07.646902 | 		 Time passed 3.576401948928833. Image Bike (7).jpg result
+2023-01-26 23:32:10.361025 | 			 0. mountain_bike, all-terrain_bike, off-roader: 31.810178756713867
+2023-01-26 23:32:10.487687 | 			 1. crash_helmet: 20.400184631347656
+2023-01-26 23:32:10.490153 | 			 2. disk_brake, disc_brake: 9.44018840789795
+2023-01-26 23:32:10.492290 | 			 3. motor_scooter, scooter: 8.6308012008667
+2023-01-26 23:32:10.493916 | 			 4. moped: 5.583113193511963
+		 loading image: 253.jpg ...2023-01-26 23:32:24.303681 | 		 Done
+		 Classifying image with 'densenet'...2023-01-26 23:32:31.204995 | 		 Done
+2023-01-26 23:32:33.794247 | 		 Time passed 6.760805368423462. Image 253.jpg result
+2023-01-26 23:32:34.783713 | 			 0. matchstick: 41.83610916137695
+2023-01-26 23:32:34.791622 | 			 1. schooner: 28.83039093017578
+2023-01-26 23:32:34.798091 | 			 2. space_shuttle: 5.172757625579834
+2023-01-26 23:32:34.818602 | 			 3. pirate, pirate_ship: 4.3821563720703125
+2023-01-26 23:32:34.830036 | 			 4. catamaran: 3.967493772506714
+		 loading image: 253.jpg ...2023-01-26 23:32:35.897426 | 		 Done
+2023-01-26 23:32:35.899943 | 		 Get optimyzed model densenet from storege
+2023-01-26 23:32:35.900512 | 		 Optimization complete
+		 Classifying image with trt 'densenet'...2023-01-26 23:32:39.397832 | 		 Done
+2023-01-26 23:32:40.982072 | 		 Time passed 3.4965381622314453. Image 253.jpg result
+2023-01-26 23:32:41.234373 | 			 0. matchstick: 41.83612060546875
+2023-01-26 23:32:41.237703 | 			 1. schooner: 28.83036994934082
+2023-01-26 23:32:41.239298 | 			 2. space_shuttle: 5.172787666320801
+2023-01-26 23:32:41.240758 | 			 3. pirate, pirate_ship: 4.382157325744629
+2023-01-26 23:32:41.241976 | 			 4. catamaran: 3.967487096786499
+2023-01-26 23:32:42.097265 | 	 total_time: 168.6045639514923. avg: 16.86045639514923. avg optimize: 3.005947470664978
+2023-01-26 23:32:42.097929 | 	 loading model resnet...
+		 loading image: 267.jpg ...2023-01-26 23:33:33.432054 | 		 Done
+		 Classifying image with 'resnet'...2023-01-26 23:34:23.180066 | 		 Done
+2023-01-26 23:34:24.130874 | 		 Time passed 49.59706687927246. Image 267.jpg result
+2023-01-26 23:34:24.449251 | 			 0. fireboat: 56.757408142089844
+2023-01-26 23:34:24.485633 | 			 1. lifeboat: 17.354446411132812
+2023-01-26 23:34:24.564758 | 			 2. dock, dockage, docking_facility: 5.359095573425293
+2023-01-26 23:34:24.582155 | 			 3. ambulance: 3.5574984550476074
+2023-01-26 23:34:24.589340 | 			 4. liner, ocean_liner: 2.6068365573883057
+		 loading image: 267.jpg ...2023-01-26 23:34:37.694324 | 		 Done
